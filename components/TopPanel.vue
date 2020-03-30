@@ -4,7 +4,7 @@
       <SearchInput />
       <UserInfo />
     </div>
-    <BreadCrumb :path="path"/>
+    <BreadCrumb />
   </div>
 
 </template>
@@ -20,16 +20,14 @@
       UserInfo,
       BreadCrumb
     },
-    computed: {
-        path() {
-          console.log(this.$store.getters['path/path'])
-          return this.$store.getters['path/path']
-        }
-    }
+
   }
 </script>
 
 <style scoped lang="scss">
+  .top_panel {
+    margin-bottom: 2rem;
+  }
   .wrapper {
     width: 100%;
     display: flex;
@@ -37,5 +35,4 @@
     align-items: center;
     flex-wrap: wrap;
   }
-
 </style>

@@ -7,8 +7,7 @@
 <script>
 export default {
   fetch({store, route}) {
-    const path = route.path;
-    store.commit('path/setPath', path)
+    store.commit('path/setPath', route.path)
   }
 }
 </script>

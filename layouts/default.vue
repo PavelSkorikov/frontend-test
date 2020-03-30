@@ -44,7 +44,7 @@
 .page_content {
   max-width: 80%;
   width: 100%;
-  padding: 20px 40px 20px 40px;
+  padding: 0 40px 0 40px;
 }
 .button--green {
   display: inline-block;

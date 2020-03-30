@@ -5,7 +5,11 @@
 </template>
 
 <script>
-
+  export default {
+    fetch({store, route}) {
+      store.commit('path/setPath', route.path)
+    }
+  }
 </script>
 
 <style>
