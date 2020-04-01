@@ -27,7 +27,7 @@
 
 .container {
   margin: 0 auto;
-  padding-top: 10%;
+  padding-top: 5%;
   max-width: 80%;
   min-height: 100vh;
   display: flex;

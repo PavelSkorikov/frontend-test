@@ -26,6 +26,7 @@
   width: 600px;
   height: 3rem;
   box-shadow: 0 0 3px rgba(0,0,0,.3);
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
