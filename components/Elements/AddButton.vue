@@ -1,6 +1,6 @@
 <template>
   <button class="add-button">
-    <i class="fa fa-plus fa-2x" aria-hidden="true"></i>
+    <i class="fa fa-plus fa-2x"></i>
     <span>{{label}}</span>
   </button>
 </template>

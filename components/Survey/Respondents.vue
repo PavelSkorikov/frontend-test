@@ -1,7 +1,7 @@
 <template>
   <section class="respondents">
     <div class="respondents__title">Добавить опрос</div>
-    <Condition v-for="condition in countConditions" :numCondition="condition"/>
+    <Condition v-for="condition in conditions" :key="condition.id" :id="condition.id"/>
     <div class="addCondition">
       <div class="addCondition__button" @click="addCondition">
         <i class="fa fa-plus fa-2x"></i>
@@ -33,9 +33,15 @@
             countConditions: null
           }
       },
+      computed: {
+        conditions() {
+          return this.$store.getters['condition/conditions']
+        }
+      },
       methods: {
         addCondition() {
           this.countConditions++;
+          this.$store.commit('condition/addCondition', {id: this.countConditions})
         }
       }
 

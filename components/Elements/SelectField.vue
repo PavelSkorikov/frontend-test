@@ -42,7 +42,9 @@
       },
       methods: {
           setCondition(item) {
-            this.$emit('selected_condition', item)
+            item.id = this.numCondition;
+            this.$store.commit('condition/setCondition', item)
+            this.$emit('set', item)
           }
       }
     }

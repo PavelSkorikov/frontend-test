@@ -1,14 +1,14 @@
 <template>
     <div class="condition">
-      <SelectField :numCondition="numCondition" @selected_condition="addCondition" />
+      <SelectField :numCondition="id" @set="getCondition" />
       <OldRange v-if="selectedCondition.component === 'OldRange'" />
       <CardStatus v-if="selectedCondition.component === 'CardStatus'" />
       <CardType v-if="selectedCondition.component === 'CardType'" />
       <div class="buttons">
         <div class="empty-wrapper"></div>
         <div class="buttons-wrapper">
-          <AddButton :label="selectedCondition.labelButton"/>
-          <RemoveButton/>
+          <AddButton v-if="selectedCondition.id>0" :label="selectedCondition.labelButton" />
+          <RemoveButton />
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
     export default {
         name: "Condition",
       props: {
-        "numCondition": Number,
+        "id": Number,
       },
       components: {
         SelectField,
@@ -39,13 +39,15 @@
             selectedCondition: {}
           }
       },
-
+      // computed: {
+      //   getCondition() {
+      //     return this.$store.getters['condition/conditionById'](this.id)
+      //   }
+      // },
       methods: {
-          addCondition(item) {
-            this.selectedCondition = item
-            // this.$store.commit(['condition/setCondition'], this.numCondition)
-
-          }
+        getCondition(item) {
+          this.selectedCondition = item
+        }
       }
     }
 </script>
